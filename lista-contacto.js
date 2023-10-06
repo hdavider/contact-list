@@ -1,7 +1,7 @@
 let listaContactos = [
-    {nombreCompleto: "Hugo Erazo", Cel: 98511713},
-    {nombreCompleto: "Daisy Gonzales", Cel: 33189869},
-    {nombreCompleto: "Anyerson Castellanos", Cel:123412234}
+    {nombre: "Hugo", apellido: "Erazo", Cel: 98511713, ubicacion: {ciudad: "Juticalpa", direccion: "El Centro"}},
+    {nombre: "Daisy", apellido: "Gonzales",Cel: 33189869},
+    {nombre: "Anyerson", apellido: "Castellanos",Cel:123412234}
 
 ];
 
@@ -9,9 +9,9 @@ console.log(listaContactos);
 
 // Añadir
 
-function anadirContacto(nombreCompleto, Cel) {
+function anadirContacto(nombre, Cel) {
     let anadirContacto = {
-        nombreCompleto: nombreCompleto,
+        nombre: nombre,
         Cel: Cel
     };
 
@@ -25,9 +25,9 @@ anadirContacto("Mauricio Erazo", 234456567);
 
 //Borrar
 
-function eliminarContacto(nombreCompleto){
+function eliminarContacto(nombre){
     listaContactos = listaContactos.filter(
-        contacto => contacto.nombreCompleto !== nombreCompleto
+        contacto => contacto.nombre !== nombre
 
     );
 }
@@ -40,7 +40,7 @@ console.log(listaContactos);
 function printContacto() {
     console.log("Listado:");
     listaContactos.forEach(function(contacto){
-        console.log(contacto.nombreCompleto + " - " + contacto.Cel);
+        console.log(contacto.nombre + " - " + contacto.Cel);
 
     });
 }
