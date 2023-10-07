@@ -24,6 +24,7 @@ function anadirContacto(nombre, apellido, cel, ubicacionCiudad, ubicacionDirecci
     console.log(listaContactos);
 }
 
+// Probando la funcion de añadir contacto
 
 anadirContacto("Daniel", "Erazo", 123456678, "Wichita Falls", "Texas");
 anadirContacto("Mauricio", "Erazo",234456567, "Lake Worth", "Florida");
@@ -40,6 +41,32 @@ function eliminarContacto(nombre){
 eliminarContacto("Mauricio");
 console.log(listaContactos);
 
+
+// Actualizar contacto
+
+function actualizarContacto(nombre, nuevoNombre, nuevoApellido, nuevoCel, nuevaCiudad, nuevaDireccion) {
+    const contactoIndex = listaContactos.findIndex(contacto => contacto.nombre === nombre);
+
+    if (contactoIndex !== -1) {
+        const contactoActualizado = {
+            nombre: nuevoNombre,
+            apellido: nuevoApellido,
+            cel: nuevoCel,
+            ubicacion: {
+                ciudad: nuevaCiudad,
+                direccion: nuevaDireccion
+            }
+        };
+
+        listaContactos[contactoIndex] = contactoActualizado;
+        console.log("Contacto actualizado:", contactoActualizado);
+    } else {
+        console.log("El contacto no fue encontrado.");
+    }
+}
+
+// Actualizando el contacto, buscando a traves del nombre
+actualizarContacto("Hugo", "David", "Moncada", 987654321, "Tegucigalpa", "Honduras");
 
 // Imprimir
 
