@@ -40,12 +40,13 @@ function eliminarContacto(nombre){
 eliminarContacto("Mauricio");
 console.log(listaContactos);
 
+
 // Imprimir
 
 function printContacto() {
     console.log("Listado:");
     listaContactos.forEach(function(contacto){
-        console.log(contacto.nombre + " - " + contacto.cel, contacto.ubicacion);
+        console.log(contacto.nombre + " " + contacto.apellido + " - " + contacto.cel, contacto.ubicacion);
 
     });
 }
